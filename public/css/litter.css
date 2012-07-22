@@ -1,0 +1,32 @@
+.tweets li {
+  border-top: 1px solid #ccc;
+  margin: 5px 0;
+  padding: 10px 0;
+}
+
+.tweets img {
+  height: 48px;
+  margin-right: 10px;
+  width: 48px;
+}
+
+.tweets .details {
+  margin-left: 58px;
+}
+
+.tweets h4 span {
+  color: #aaa; 
+}
+
+.tweets .meta {
+  color: #aaa;
+  font-size: 11px;
+}
+
+#new_tweet label {
+  font-weight: bold;
+}
+
+#new_tweet textarea {
+  display: block;
+}

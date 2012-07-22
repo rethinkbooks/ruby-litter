@@ -1,0 +1,17 @@
+.row
+  .span6.offset3
+    %form#new_tweet.clearfix(action='/tweets/create' method='post')
+      %label(for='tweet_text') What's Happening?
+      %textarea#tweet_text.span6.input-xlarge(name='tweet[text]')
+      .actions.pull-right
+        %button.btn.btn-primary Tweet
+    %ul.tweets.unstyled
+      - tweets.each do |tweet|
+        %li.clearfix
+          %img.pull-left(src="#{tweet[:user][:profile_image_url]}")
+          .details
+            %h4 
+              = tweet[:user][:name]
+              %span @#{tweet[:user][:screen_name]}
+            = tweet[:text]
+            .meta= tweet[:created_at]

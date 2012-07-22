@@ -1,0 +1,28 @@
+!!! 5
+%html
+  %head
+    %title Litter
+    %link(href='/css/bootstrap.min.css' rel='stylesheet' type='text/css')
+    %link(href='/css/litter.css' rel='stylesheet' type='text/css')
+    :css
+      body { padding-top: 60px; }
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.brand(href='/') Litter
+          %ul.nav.pull-right
+            - if authd?
+              %li
+                %a(href='/sign_out') Sign Out
+            - else
+              %li
+                %a(href='/sign_in') Sign In
+    .container 
+      - if flash[:notice]
+        .alert.alert-info
+          %a.close(href='#'){data: {dismiss: 'alert'}} x
+          = flash[:notice]
+      = yield
+  %script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js' type='text/javascript')
+  %script(src='/js/bootstrap.min.js' type='text/javascript')
